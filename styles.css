@@ -1,0 +1,202 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  background: #ffffff;
+  color: #2d3436;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Header */
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #2575fc;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #636e72;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.controls label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#colorPicker {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: #2575fc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #6a11cb;
+}
+
+/* File Upload */
+.file-upload {
+  margin-top: 20px;
+}
+
+.file-label {
+  padding: 10px 20px;
+  background: #2575fc;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.file-label:hover {
+  background: #6a11cb;
+}
+
+#imageUpload {
+  display: none;
+}
+
+/* Image Container */
+#imageContainer {
+  position: relative;
+  display: none;
+  overflow: hidden;
+  border: 2px solid #2575fc;
+  border-radius: 15px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  background: #dfe6e9;
+  margin: 0 auto;
+  overflow: hidden; /* Ensures blocks stay inside the container */
+}
+
+#imageContainer img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+/* Hidden Block */
+.hidden-block {
+  background-color: black;
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 0px;
+  transition: opacity 0.3s ease;
+  box-sizing: border-box;
+}
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  background-image: url('/mnt/data/grafik.png'); /* Use uploaded image as background */
+  background-size: cover; /* Ensure the background image covers the whole modal */
+  background-position: center center; /* Center the background image */
+  background-repeat: no-repeat;
+}
+
+/* Modal content styling */
+.modal-content {
+  position: relative;
+  margin: auto;
+  top: 10%;
+  max-width: 90%;
+  max-height: 80%;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent dark background for content */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center;    /* Center content vertically */
+}
+
+#modalImageContainer {
+  position: relative;
+  display: block; /* Ensure container fits the content */
+  overflow: hidden;
+}
+
+.hidden-block {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 1000; /* Ensure it appears above the blocks */
+}
