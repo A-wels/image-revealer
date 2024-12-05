@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Reveal Game</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>✨ Image Reveal Game</h1>
-      <p>Uncover the hidden image block by block!</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Reveal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>✨ Image Reveal</h1>
+        <p>Uncover the hidden image block by block!</p>
+      </div>
+      <div class="controls">
+        <label for="colorPicker">Block Color:</label>
+        <input type="color" id="colorPicker" value="#000000" />
+        
+        <!-- New input for block size -->
+        <label for="blockSize">Block Size:</label>
+        <input type="number" id="blockSize" value="30" min="10" max="100" />
+        
+        <!-- New input for reveal speed -->
+        <label for="revealSpeed">Reveal Speed (ms):</label>
+        <input type="number" id="revealSpeed" value="100" min="50" max="500" />
+
+        <button id="playButton" class="btn">Play</button>
+      </div>
+      <div class="file-upload">
+        <label for="imageUpload" class="file-label">📁 Upload Image</label>
+        <input type="file" id="imageUpload" accept="image/*" />
+      </div>
+      <div id="imageContainer"></div>
     </div>
-    <div class="controls">
-      <label for="colorPicker">Block Color:</label>
-      <input type="color" id="colorPicker" value="#000000">
-      <button id="playButton" class="btn">Play</button>
+    <div id="gameModal" class="modal">
+      <!-- Inside the Modal content -->
+      <div class="modal-content">
+        <div id="modalImageContainer"></div>
+        <div class="buttons-row">
+          <button id="pauseButton" class="btn">Pause</button>
+          <button id="skipButton" class="btn">Reveal</button>
+          <button id="restartButton" class="btn">Restart</button>
+          <button id="closeModal" class="btn"></button>
+        </div>
+      </div>
     </div>
-    <div class="file-upload">
-      <label for="imageUpload" class="file-label">📁 Upload Image</label>
-      <input type="file" id="imageUpload" accept="image/*">
-    </div>
-    <div id="imageContainer"></div>
-  </div>
-  <div id="gameModal" class="modal">
-    <div class="modal-content">
-      <div id="modalImageContainer"></div>
-      <button id="closeModal" class="btn">Close</button>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
