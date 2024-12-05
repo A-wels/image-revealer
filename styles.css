@@ -254,3 +254,8 @@ body {
 .modal-buttons .btn:hover {
   transform: scale(1.05); /* Slightly enlarge buttons on hover */
 }
+
+.footer {
+  position: absolute;
+  bottom: 8px;
+}
