@@ -7,3 +7,4 @@ Features:
 - Skip to end
 - Restart
 
+You can either selfhost the three files or visit [reveal.a-wels.de](https://reveal.a-wels.de)
